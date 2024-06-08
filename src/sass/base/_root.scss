@@ -1,0 +1,14 @@
+@use "../abstracts" as *;
+
+:root {
+  @each $colors, $value in $colors {
+    --#{$colors}-clr: #{$value};
+  }
+
+  --font-family-base: $font-family-base;
+  --font-family-accent: $font-family-accent;
+
+  --fw-normal: $font-weight-regular;
+  --fw-semi-bold: $font-weight-semi-bold;
+  --fw-bold: $font-weight-bold;
+}

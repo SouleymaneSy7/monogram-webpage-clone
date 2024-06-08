@@ -1,0 +1,13 @@
+$color-primary: hsl(230, 54%, 22%);
+$color-secondary: hsl(14, 100%, 70%);
+$color-link: hsl(15, 65%, 82%);
+$color-light: hsl(40, 9%, 94%);
+$color-dark: hsl(231, 54%, 7%);
+
+$colors: (
+  primary: $color-primary,
+  secondary: $color-secondary,
+  link: $color-link,
+  light: $color-light,
+  dark: $color-dark,
+);

@@ -1,0 +1,10 @@
+@use "../abstracts/" as *;
+
+// light weight
+@include custom-font-face("Prompt", "@/assets/fonts/Prompt-Light", 300);
+
+// normal weight
+@include custom-font-face("Prompt", "@/assets/fonts/Prompt-Regular", 400);
+
+// semi-bold weight
+@include custom-font-face("Prompt", "@/assets/fonts/Prompt-SemiBold", 600);

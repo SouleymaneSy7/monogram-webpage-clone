@@ -1,0 +1,80 @@
+@use "./typography" as *;
+@use "./colors" as *;
+@use "./sizes" as *;
+@use "./functions" as *;
+
+// contextual content
+$text-color: custom-color(dark);
+$anchor-link-color: custom-color(link);
+$anchor-link-hover-color: custom-color(secondary);
+
+$base-line-height: 1.5;
+$title-line-height: 1.2;
+$text-uppercase: uppercase;
+$full-radius: 100vmax;
+
+// container
+$container-min-margin-inline: spacing(4);
+$container-max-width: rem(1140px);
+$container-max-width-lg: rem(960px);
+$container-max-width-md: rem(720px);
+$container-max-width-sm: rem(540px);
+
+// body
+$body-font-family: $font-family-base;
+$body-font-weight: $font-weight-regular;
+$body-font-size: $fs-16-17;
+$body-text-color: $text-color;
+$body-background-color: $color-light;
+$body-line-height: $base-line-height;
+
+// heading
+$heading-font-family: $font-family-base;
+$heading-color-default: $color-primary;
+$heading-color-accent: $color-secondary;
+$heading-font-weight: $font-weight-bold;
+$heading-letter-spacing: rem(4px);
+$heading-line-height: $title-line-height;
+$heading-text-transform: $text-uppercase;
+
+// link
+$link-color: $anchor-link-color;
+$link-color-hover: $anchor-link-hover-color;
+
+// button
+$button-font-family: $body-font-family;
+$button-font-size: $fs-12-13;
+$button-font-weight: $font-weight-bold;
+$button-line-height: $base-line-height;
+$button-letter-spacing: rem(1px);
+$button-text-transform: $text-uppercase;
+$button-padding: rem(6px) rem(28px);
+$button-border-radius: $full-radius;
+$button-user-select: none;
+$button-transition: color 150ms ease-in-out, background-color 150ms ease-in-out,
+  border-color 150ms ease-in-out;
+
+// card btn
+$card-button-background-color: $color-primary;
+$card-button-text-color: $color-light;
+$card-button-border-color: $color-primary;
+
+// footer btn
+$footer-button-background-color: $color-link;
+$footer-button-text-color: $color-dark;
+$footer-button-border-color: $color-link;
+
+// navigation
+$navigation-background-color: $color-primary;
+$navigation-font-size: $fs-11-12;
+$navigation-gap: size(1);
+
+// card
+$card-heading-font-size: $fs-20-21;
+$card-heading-font-weight: $font-weight-bold;
+$card-heading-line-height: $title-line-height;
+$card-letter-spacing: rem(1.5px);
+$card-text-transform: $text-uppercase;
+$card-color-default: $color-primary;
+$card-background-default-color: $color-light;
+$card-heading-color-default: $card-color-default;

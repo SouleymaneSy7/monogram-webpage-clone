@@ -1,0 +1,269 @@
+@use "./sizes" as *;
+
+// =============================
+//        Font Face Mixins
+// =============================
+
+@mixin custom-font-face(
+  $font-name,
+  $file-name,
+  $weight: normal
+) {
+  @font-face {
+    font-family: quote($font-name);
+    font-style: normal;
+    font-display: swap;
+    font-weight: $weight;
+    src: url($file-name + ".eot");
+    src: local($font-name), url($file-name + ".woff2") format("woff2"),
+      url($file-name + ".woff") format("woff"),
+      url($file-name + ".ttf") format("truetype"),
+      url($file-name + ".eot?#iefix") format("embedded-opentype");
+  }
+}
+
+// ================================
+//      Media Queries Mixins
+// ================================
+
+@mixin mq($size) {
+  @if map.has-key($breakpoints, $size) {
+    $breakpoint: map-get($breakpoints, $size);
+    @media only screen and (min-width: $breakpoint) {
+      @content;
+    }
+  } @else if meta.type-of($size) == number {
+    @if math.is-unitless($size) {
+      @error 'when using a number with @mq() make sure to include a unit';
+    } @else {
+      @media only screen and (min-width: $size) {
+        @content;
+      }
+    }
+  } @else {
+    @error 'the keyword #{$size} is not in the $breakpoints map';
+  }
+}
+
+// =============================
+//        heading mixins
+// =============================
+
+@mixin heading(
+  $fs,
+  $color,
+  $heading-text-transform: uppercase,
+  $heading-letter-spacing: rem(2px),
+  $heading-font-weight: 600,
+  $heading-line-height: 1.5
+) {
+  font-size: $fs;
+  color: $color;
+
+  text-transform: $heading-text-transform;
+  letter-spacing: $heading-letter-spacing;
+  font-weight: $heading-font-weight;
+  line-height: $heading-line-height;
+}
+
+// ================================
+//          Background Size
+// ================================
+
+@mixin x-background-size($values...) {
+  -webkit-background-size: $values; // For Android 2.x
+  background-size: $values;
+}
+
+/// @output
+/// ```css
+///   -webkit-background-size: $values;
+///           background-size: $values;
+/// ```
+///
+/// @example
+///   .selector {
+///     @include x-background-size(100% auto);
+///   }
+
+// ================================
+//          Border Radius
+// ================================
+
+@mixin x-border-radius($values) {
+  -webkit-border-radius: $values;
+  -moz-border-radius: $values;
+  border-radius: $values;
+}
+
+/// @output
+/// ```css
+///   -webkit-border-radius: <values>;
+///           border-radius: <values>;
+/// ```
+///
+/// @example
+///   .selector {
+///     @include x-border-radius(20px 10px);
+///   }
+///
+
+// ====================
+//        Border
+// ====================
+
+@mixin add-border(
+  $border-position: all,
+  $border-size: 1px,
+  $border-pattern: solid,
+  $border-color: black
+) {
+  @if $border-position == $border-position {
+    border: $border-size $border-pattern $border-color;
+  } @else {
+    border-#{$border-position}: $border-size $border-pattern $border-color;
+  }
+}
+
+// ================================
+//            Box Shadow
+// ================================
+
+@mixin x-box-shadow($values...) {
+  -webkit-box-shadow: $values;
+  box-shadow: $values;
+}
+
+/// @output
+/// ```css
+///   -webkit-box-shadow: <values>;
+///           box-shadow: <values>;
+/// ```
+///
+/// @example
+///   .selector {
+///     @include x-box-shadow(5px 5px 10px 5px #aaa);
+///   }
+
+// ================================
+//          Calc Functions
+// ================================
+
+@mixin x-calc($property, $expression) {
+  #{$property}: -webkit-calc(#{$expression});
+  #{$property}: calc(#{$expression});
+}
+
+/// @output
+/// ```css
+///   <property>: -webkit-calc(<expression>);
+///   <property>: calc(<expression>);
+/// ```
+///
+/// @example
+///  .selector {
+///    @include x-calc(width, "600px - 2em");
+///  }
+
+// =========================
+//          Opacity
+// =========================
+
+@mixin x-opacity($value: 0) {
+  $value-percentage: $value * 100;
+
+  opacity: $value;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=#{$value-percentage})";
+  filter: alpha(opacity=#{$value-percentage});
+}
+
+///
+/// Generates `opacity` output for a given element and adds a filter for old IE.
+///
+/// @output
+/// ```css
+///   opacity: <value>;
+///    filter: alpha(opacity=<value * 100>);
+/// ```
+///
+/// @example
+///   .selector {
+///     @include x-opacity(0.3);
+///   }
+///
+
+// ================================
+//            Transforms
+// ================================
+
+@mixin x-transform($values) {
+  -webkit-transform: $values; // Chrome, Safari, iOS Safari, Android Stock
+  -ms-transform: $values; // IE9
+  transform: $values;
+}
+
+///
+/// Generates cross-browser-compatible `transform` for a given element.
+///
+/// @output
+/// ```css
+///  -webkit-transform: <values>;
+///      -ms-transform: <values>;
+///          transform: <values>;
+/// ```
+///
+/// @example
+///  .selector {
+///    @include x-transform(rotate(1deg));
+///  }
+///
+
+// ================================
+//            Transitions
+// ================================
+
+@mixin x-transition($values...) {
+  -webkit-transition: $values;
+  transition: $values;
+}
+
+///
+/// Generates cross-browser-compatible `transition` output for a given element.
+///
+/// @output
+/// ```css
+///   -webkit-transition: <values>;
+///           transition: <values>;
+/// ```
+///
+/// @example
+///   .selector {
+///     @include x-transition(background 0.3s ease-in);
+///   }
+
+// ================================
+//          User Selects
+// ================================
+
+@mixin x-user-select($value: none) {
+  -webkit-user-select: $value;
+  -moz-user-select: $value;
+  -ms-user-select: $value;
+  user-select: $value;
+}
+
+///
+/// Disables selection of content of a given element.
+///
+/// @output
+/// ```css
+///   -webkit-user-select: <value>;
+///      -moz-user-select: <value>;
+///       -ms-user-select: <value>;
+///           user-select: <value>;
+/// ```
+///
+/// @example
+///   .selector {
+///     @include x-user-select;
+///   }
