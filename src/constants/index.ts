@@ -81,22 +81,18 @@ export const audDropDown = [
 ];
 
 // Hero
-export const mainHero = [
-  {
-    title: "A CONSOLE FOR EVERY WORKFLOW",
-    description: "Discover the perfect console for yours.",
-    heroImg: hero1Img,
-    heroIcon: chevronDownIcon,
-  },
-];
+export const mainHero = {
+  title: "A CONSOLE FOR EVERY WORKFLOW",
+  description: "Discover the perfect console for yours.",
+  heroImg: hero1Img,
+  heroIcon: chevronDownIcon,
+};
 
-export const sectionHero = [
-  {
-    title: "CREATE YOUR OWN CONSOLE",
-    description: "Add-on to make it perfect.",
-    sectionHeroImg: hero2Img,
-  },
-];
+export const sectionHero = {
+  title: "CREATE YOUR OWN CONSOLE",
+  description: "Add-on to make it perfect.",
+  sectionHeroImg: hero2Img,
+};
 
 // Top Cards
 export const topCards = [
@@ -228,23 +224,19 @@ export const bottomCards = [
 ];
 
 // Footer
-export const footerSubscribe = [
-  {
-    title: "SUBSCRIBE TO MONOGRAM",
-    description:
-      "Master productivity with Creative Console and get all the latest Monogram news.",
-    inputPlaceholder: "Email Address",
-    buttonText: "SUBMIT",
-    socialIcons: [instagramIcon, twitterIcon, facebookIcon, youtubeIcon],
-  },
-];
+export const footerSubscribe = {
+  title: "SUBSCRIBE TO MONOGRAM",
+  description:
+    "Master productivity with Creative Console and get all the latest Monogram news.",
+  inputPlaceholder: "Email Address",
+  buttonText: "SUBMIT",
+  socialIcons: [instagramIcon, twitterIcon, facebookIcon, youtubeIcon],
+};
 
-export const footerAddress = [
-  {
-    title: "MONOGRAM",
-    addressList: ["305 King St. W.", "Suite 502", "Kitchener, ON", "Canada"],
-  },
-];
+export const footerAddress = {
+  title: "MONOGRAM",
+  addressList: ["305 King St. W.", "Suite 502", "Kitchener, ON", "Canada"],
+};
 
 export const footerLinks = [
   {
