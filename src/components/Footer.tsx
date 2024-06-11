@@ -1,4 +1,5 @@
 import FooterAddress from "./FooterAddress";
+import FooterList from "./FooterList";
 import FooterSubscribe from "./FooterSubscribe";
 
 const Footer = () => {
@@ -6,6 +7,7 @@ const Footer = () => {
     <footer className="footer">
       <FooterAddress />
       <FooterSubscribe />
+      <FooterList />
     </footer>
   );
 };

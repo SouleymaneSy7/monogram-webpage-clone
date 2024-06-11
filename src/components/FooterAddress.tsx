@@ -6,7 +6,7 @@ const FooterAddress = () => {
 
   return (
     <div className="footer__children footer--address">
-      <p>{title}</p>
+      <h3>{title}</h3>
       <address>
         {addressList.map((address, index) => {
           return <p key={index}>{address}</p>;
