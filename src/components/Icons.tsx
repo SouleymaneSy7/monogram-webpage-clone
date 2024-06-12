@@ -1,5 +1,5 @@
 type IconsProps = {
-  iconSrc: string;
+  iconSrc: string | undefined;
   alt: string;
 };
 
