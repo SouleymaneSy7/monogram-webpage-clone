@@ -41,6 +41,37 @@ import {
 } from "@/utils";
 
 // Header Navigation
+export const MobileDropDown = [
+  {
+    id: 20,
+    dropDownTitle: "USD ($)",
+  },
+  {
+    id: 21,
+    dropDownTitle: "CAD ($)",
+  },
+  {
+    id: 22,
+    dropDownTitle: "EUR (€)",
+  },
+  {
+    id: 23,
+    dropDownTitle: "AUD ($)",
+  },
+  {
+    id: 24,
+    dropDownTitle: "GBP (£)",
+  },
+  {
+    id: 25,
+    dropDownTitle: "KRW (₩)",
+  },
+  {
+    id: 26,
+    dropDownTitle: "JPY (¥)",
+  },
+];
+
 export const headerDesktopNavlist = [
   {
     id: 1,
@@ -86,8 +117,11 @@ export const headerDesktopNavlist = [
   },
   {
     id: 7,
-    title: "Aud",
     icon: shopIcon,
+  },
+  {
+    id: 8,
+    title: "Aud",
     dropDownMenu: [
       {
         id: 20,
