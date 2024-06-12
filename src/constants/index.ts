@@ -37,6 +37,7 @@ import {
   instagramIcon,
   twitterIcon,
   youtubeIcon,
+  shopIcon,
 } from "@/utils";
 
 // Header Navigation
@@ -86,6 +87,7 @@ export const headerDesktopNavlist = [
   {
     id: 7,
     title: "Aud",
+    icon: shopIcon,
     dropDownMenu: [
       {
         id: 20,
@@ -120,16 +122,46 @@ export const headerDesktopNavlist = [
 ];
 
 export const headerMobileNavlist = [
-  "How It Works",
-  "Workflows",
-  "Audio console",
-  "Photo Console",
-  "Video Console",
-  "Mini Console",
-  "Download",
-  "Blog",
-  "Support",
-  "Shop",
+  {
+    id: 1,
+    title: "How It Works",
+  },
+  {
+    id: 2,
+    title: "Workflows",
+  },
+  {
+    id: 3,
+    title: "Audio console",
+  },
+  {
+    id: 4,
+    title: "Photo Console",
+  },
+  {
+    id: 5,
+    title: "Video Console",
+  },
+  {
+    id: 6,
+    title: "Mini Console",
+  },
+  {
+    id: 7,
+    title: "Download",
+  },
+  {
+    id: 8,
+    title: "Blog",
+  },
+  {
+    id: 9,
+    title: "Support",
+  },
+  {
+    id: 10,
+    title: "Shop",
+  },
 ];
 
 // Hero
