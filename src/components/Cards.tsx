@@ -61,7 +61,7 @@ const Cards = ({
 
             <div>
               <p className="card__footer__price">{cardPrice}</p>
-              <Button type="button" classNames="card__footer--btn">
+              <Button type="button" className="card__footer--btn">
                 Shop Now
               </Button>
             </div>
