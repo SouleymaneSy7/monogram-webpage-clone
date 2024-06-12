@@ -3,7 +3,7 @@ import Icons from "./Icons";
 
 type NavListPropsTypes = {
   list: {
-    title: string;
+    title?: string | undefined;
     icon?: string | undefined;
     dropDownMenu?: {
       id: number;
