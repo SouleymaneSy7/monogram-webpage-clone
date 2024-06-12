@@ -41,13 +41,82 @@ import {
 
 // Header Navigation
 export const headerDesktopNavlist = [
-  "How It Works",
-  "Workflows",
-  "Download",
-  "Blog",
-  "Support",
-  "Shop",
-  "Aud",
+  {
+    id: 1,
+    title: "How It Works",
+  },
+  {
+    id: 2,
+    title: "Workflows",
+    dropDownMenu: [
+      {
+        id: 10,
+        dropDownTitle: "Audio console",
+      },
+      {
+        id: 11,
+        dropDownTitle: "Photo Console",
+      },
+      {
+        id: 12,
+        dropDownTitle: "Video Console",
+      },
+      {
+        id: 13,
+        dropDownTitle: "Mini Console",
+      },
+    ],
+  },
+  {
+    id: 3,
+    title: "Download",
+  },
+  {
+    id: 4,
+    title: "Blog",
+  },
+  {
+    id: 5,
+    title: "Support",
+  },
+  {
+    id: 6,
+    title: "Shop",
+  },
+  {
+    id: 7,
+    title: "Aud",
+    dropDownMenu: [
+      {
+        id: 20,
+        dropDownTitle: "USD ($)",
+      },
+      {
+        id: 21,
+        dropDownTitle: "CAD ($)",
+      },
+      {
+        id: 22,
+        dropDownTitle: "EUR (€)",
+      },
+      {
+        id: 23,
+        dropDownTitle: "AUD ($)",
+      },
+      {
+        id: 24,
+        dropDownTitle: "GBP (£)",
+      },
+      {
+        id: 25,
+        dropDownTitle: "KRW (₩)",
+      },
+      {
+        id: 26,
+        dropDownTitle: "JPY (¥)",
+      },
+    ],
+  },
 ];
 
 export const headerMobileNavlist = [
@@ -61,23 +130,6 @@ export const headerMobileNavlist = [
   "Blog",
   "Support",
   "Shop",
-];
-
-export const workflowsDropDown = [
-  "Audio console",
-  "Photo Console",
-  "Video Console",
-  "Mini Console",
-];
-
-export const audDropDown = [
-  "USD ($)",
-  "CAD ($)",
-  "EUR (€)",
-  "AUD ($)",
-  "GBP (£)",
-  "KRW (₩)",
-  "JPY (¥)",
 ];
 
 // Hero
