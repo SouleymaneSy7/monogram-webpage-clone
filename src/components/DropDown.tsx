@@ -4,7 +4,10 @@ import Button from "./Button";
 
 type DropDownPropsTypes = {
   label: ReactNode;
-  options: string[];
+  options: {
+    id: number;
+    dropDownTitle: string;
+  }[];
 };
 
 const DropDown = ({ label, options }: DropDownPropsTypes) => {
@@ -24,10 +27,10 @@ const DropDown = ({ label, options }: DropDownPropsTypes) => {
         {expanded && (
           <div>
             <ul>
-              {options.map((option, index) => {
+              {options.map((option) => {
                 return (
-                  <li key={index}>
-                    <a href="#">{option}</a>
+                  <li key={option.id}>
+                    <a href="#">{option.dropDownTitle}</a>
                   </li>
                 );
               })}
