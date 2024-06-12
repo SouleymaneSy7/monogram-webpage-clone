@@ -1,6 +1,6 @@
 import React from "react";
 import { type ReactNode } from "react";
-// import Button from "./Button";
+import Button from "./Button";
 
 type DropDownPropsTypes = {
   label: ReactNode;
@@ -17,9 +17,9 @@ const DropDown = ({ label, options }: DropDownPropsTypes) => {
   return (
     <React.Fragment>
       <div>
-        <button type="button" className="dropdown--btn" onClick={handleExpand}>
+        <Button type="button" className="dropdown--btn" onClick={handleExpand}>
           {label}
-        </button>
+        </Button>
 
         {expanded && (
           <div>
