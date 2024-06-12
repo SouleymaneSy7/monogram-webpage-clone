@@ -20,7 +20,7 @@ const FooterSubscribe = () => {
           placeholder={inputPlaceholder}
         />
 
-        <Button type="submit" classNames="footer--subscribe--btn">
+        <Button type="submit" className="footer--subscribe--btn">
           {buttonText}
         </Button>
       </form>
