@@ -1,14 +1,13 @@
-import { type ReactNode } from "react";
+import { type ComponentPropsWithoutRef, type ReactNode } from "react";
 
 type ButtonPropsType = {
   type: "submit" | "reset" | "button" | undefined;
   children: ReactNode;
-  classNames: string;
-};
+} & ComponentPropsWithoutRef<"button">;
 
-const Button = ({ type, children, classNames }: ButtonPropsType) => {
+const Button = ({ type, children, ...props }: ButtonPropsType) => {
   return (
-    <button type={type} className={`${classNames} | button`}>
+    <button type={type} {...props}>
       {children}
     </button>
   );
