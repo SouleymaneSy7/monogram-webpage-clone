@@ -25,11 +25,14 @@ const DropDown = ({ label, options }: DropDownPropsTypes) => {
         </Button>
 
         {expanded && (
-          <div>
-            <ul>
+          <div className="dropdown--content">
+            <ul className="dropdown--content__list">
               {options.map((option) => {
                 return (
-                  <li key={option.id}>
+                  <li
+                    key={option.id}
+                    className="dropdown--content__list__items"
+                  >
                     <a href="#">{option.dropDownTitle}</a>
                   </li>
                 );
