@@ -33,7 +33,7 @@ const HeaderNavList = () => {
         </div>
 
         <div className="navigation--desktop">
-          <ul>
+          <ul className="navigation--desktop__list">
             {headerDesktopNavlist.map((navList, index) => {
               return <NavList list={navList} key={index} />;
             })}
