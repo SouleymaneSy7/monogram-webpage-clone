@@ -4,18 +4,20 @@
 @use "./functions" as *;
 
 // contextual content
-$text-color: custom-color(dark);
+$text-color: custom-color(primary);
 $anchor-link-color: custom-color(link);
 $anchor-link-hover-color: custom-color(secondary);
 
 $base-line-height: 1.5;
 $title-line-height: 1.2;
+$title-font-size: $fs-39-40;
 $text-uppercase: uppercase;
 $full-radius: 100vmax;
 
 // container
 $container-min-margin-inline: spacing(4);
 $container-max-width: rem(1140px);
+$container-max-width-xlg: rem(1550px);
 $container-max-width-lg: rem(960px);
 $container-max-width-md: rem(720px);
 $container-max-width-sm: rem(540px);
@@ -37,7 +39,24 @@ $heading-letter-spacing: rem(4px);
 $heading-line-height: $title-line-height;
 $heading-text-transform: $text-uppercase;
 
+// Main Heading
+$heading-main-font-size: $title-font-size;
+
+// Sub Heading
+$heading-sub-font-size: $fs-20-21;
+$heading-sub-letter-spacing: rem(2px);
+
+// Heading Sub Level 2
+$heading-sub-level-2-font-size: $fs-12-13;
+$heading-sub-level-2-letter-spacing: rem(1px);
+
+// Lead
+$lead-font-size: $fs-20-21;
+$lead-font-weight: $font-weight-regular;
+
 // link
+$link-font-size: $fs-12-13;
+$link-font-weight: $font-weight-semi-bold;
 $link-color: $anchor-link-color;
 $link-color-hover: $anchor-link-hover-color;
 
@@ -71,6 +90,9 @@ $navigation-gap: size(1);
 
 // card
 $card-heading-font-size: $fs-20-21;
+$card-description-font-size: $fs-14-15;
+$card-description-font-weight: $font-weight-regular;
+$card-badge-font-size: $fs-12-13;
 $card-heading-font-weight: $font-weight-bold;
 $card-heading-line-height: $title-line-height;
 $card-letter-spacing: rem(1.5px);
@@ -78,3 +100,6 @@ $card-text-transform: $text-uppercase;
 $card-color-default: $color-primary;
 $card-background-default-color: $color-light;
 $card-heading-color-default: $card-color-default;
+
+// Footer
+$footer-font-size: $fs-14-15;
