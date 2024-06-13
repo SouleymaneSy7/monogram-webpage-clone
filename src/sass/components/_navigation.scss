@@ -1,0 +1,38 @@
+@use "../abstracts/" as *;
+
+.navigation {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  background-color: var(--primary-clr);
+  color: var(--color-light);
+
+  padding: spacing(2) spacing(4);
+
+  &__logo {
+    width: rem(150px);
+    height: rem(38px);
+  }
+}
+
+.navigation--mobile {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  & img {
+    width: spacing(7);
+    height: spacing(7);
+  }
+}
+
+.navigation--desktop {
+  display: none;
+
+  @include mq(lg) {
+    & {
+      display: block;
+    }
+  }
+}
