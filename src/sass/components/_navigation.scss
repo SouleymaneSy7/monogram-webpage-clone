@@ -25,6 +25,12 @@
     width: spacing(7);
     height: spacing(7);
   }
+
+  @include mq(lg) {
+    & {
+      display: none;
+    }
+  }
 }
 
 .navigation--desktop {
