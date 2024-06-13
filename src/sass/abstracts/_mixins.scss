@@ -1,14 +1,14 @@
+@use "sass:meta";
+@use "sass:math";
+@use "sass:map";
 @use "./sizes" as *;
+@use "./breakpoints" as *;
 
 // =============================
 //        Font Face Mixins
 // =============================
 
-@mixin custom-font-face(
-  $font-name,
-  $file-name,
-  $weight: normal
-) {
+@mixin custom-font-face($font-name, $file-name, $weight: normal) {
   @font-face {
     font-family: quote($font-name);
     font-style: normal;
