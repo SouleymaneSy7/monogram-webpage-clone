@@ -1,0 +1,23 @@
+@use "../abstracts/" as *;
+
+.footer--subscribe__input {
+  -webkit-appearance: none;
+  appearance: none;
+  outline: none;
+
+  width: rem(187px);
+  height: rem(28px);
+
+  font-size: $footer-font-size;
+  font-weight: $font-weight-regular;
+  color: var(--link-clr);
+
+  background-color: var(--primary-clr);
+  border: 1px solid var(--link-clr);
+
+  padding: rem(3px) rem(5px);
+
+  &::placeholder {
+    color: var(--light-clr);
+  }
+}
