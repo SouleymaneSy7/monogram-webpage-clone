@@ -19,7 +19,7 @@ const DropDown = ({ label, options }: DropDownPropsTypes) => {
 
   return (
     <React.Fragment>
-      <div>
+      <div className="dropdown">
         <Button type="button" className="dropdown--btn" onClick={handleExpand}>
           {label}
         </Button>
