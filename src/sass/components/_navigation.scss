@@ -1,6 +1,9 @@
 @use "../abstracts/" as *;
 
 .navigation {
+
+  width: 100%;
+
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -10,9 +13,20 @@
 
   padding: spacing(2) spacing(4);
 
+  & a {
+    color: var(--link-clr);
+
+    &:is(:hover, :focus-visible) {
+      color: var(--secondary-clr);
+    }
+  }
+
   &__logo {
     width: rem(150px);
     height: rem(38px);
+
+    display: grid;
+    place-items: center;
   }
 }
 
@@ -22,8 +36,24 @@
   align-items: center;
 
   & img {
-    width: spacing(7);
-    height: spacing(7);
+    width: spacing(6);
+    height: spacing(6);
+  }
+
+  & .navigation--mobile--shop-btn button {
+    padding: $spacing-size-2;
+
+    & img {
+      width: spacing(6);
+      height: spacing(6);
+    }
+  }
+
+  & .navigation--mobile--hamburger-menu {
+    & img {
+      width: spacing(8);
+      height: spacing(8);
+    }
   }
 
   @include mq(lg) {
@@ -39,6 +69,33 @@
   @include mq(lg) {
     & {
       display: block;
+    }
+
+    &__list {
+      display: flex;
+      align-items: center;
+      gap: spacing(4);
+
+      & li:nth-last-child(2) a {
+        padding: 0;
+      }
+
+      & a {
+        font-size: $fs-12-13;
+        font-weight: $font-weight-semi-bold;
+        text-decoration: none;
+        text-transform: uppercase;
+
+        padding: spacing(2) spacing(4);
+
+        width: spacing(6);
+        height: spacing(6);
+
+        & img {
+          width: spacing(6);
+          height: spacing(6);
+        }
+      }
     }
   }
 }
