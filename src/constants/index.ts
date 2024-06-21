@@ -121,7 +121,7 @@ export const headerDesktopNavlist = [
   },
   {
     id: 8,
-    title: "Aud",
+    title: "USD",
     dropDownMenu: [
       {
         id: 20,
