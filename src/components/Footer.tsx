@@ -5,9 +5,11 @@ import FooterSubscribe from "./FooterSubscribe";
 const Footer = () => {
   return (
     <footer className="footer">
-      <FooterAddress />
-      <FooterSubscribe />
-      <FooterList />
+      <div className="container">
+        <FooterAddress />
+        <FooterSubscribe />
+        <FooterList />
+      </div>
     </footer>
   );
 };

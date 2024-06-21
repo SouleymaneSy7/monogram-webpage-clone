@@ -6,7 +6,7 @@ const FooterList = () => {
     <React.Fragment>
       <nav className="footer__children footer--nav">
         {footerLinks.map(({ id, title, linkList }) => (
-          <React.Fragment key={id}>
+          <div key={id}>
             <h3 className="footer--nav__title">{title}</h3>
             <ul className="footer--nav__list">
               {linkList.map((link) => (
@@ -15,7 +15,7 @@ const FooterList = () => {
                 </li>
               ))}
             </ul>
-          </React.Fragment>
+          </div>
         ))}
       </nav>
 
