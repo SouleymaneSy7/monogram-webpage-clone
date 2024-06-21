@@ -1,6 +1,23 @@
 @use "../abstracts/" as *;
 
 button {
+  -webkit-appearance: none;
+  appearance: none;
+  border: none;
+  outline: none;
+  background: none;
+
+  display: grid;
+  place-items: center;
+
+  cursor: pointer;
+}
+
+button.navigation--mobile--hamburger-menu {
+  padding: spacing(1) spacing(3);
+}
+
+button[type="submit"] {
   --button-bg-color: var(--primary-clr);
   --button-text-color: var(--light-clr);
 
