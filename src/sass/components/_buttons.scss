@@ -1,0 +1,28 @@
+@use "../abstracts/" as *;
+
+button {
+  --button-bg-color: var(--primary-clr);
+  --button-text-color: var(--light-clr);
+
+  -webkit-appearance: none;
+  appearance: none;
+  border: none;
+  outline: none;
+
+  font-family: inherit;
+  font-weight: $button-font-weight;
+  font-size: $button-font-size;
+  color: var(--button-text-color);
+  text-transform: $button-text-transform;
+
+  background-color: var(--button-bg-color);
+  border-radius: $button-border-radius;
+
+  padding: $button-padding;
+  cursor: pointer;
+}
+
+button.footer--subscribe--btn {
+  --button-bg-color: var(--link-clr);
+  --button-text-color: var(--dark-clr);
+}
