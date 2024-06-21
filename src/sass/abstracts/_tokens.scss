@@ -103,3 +103,6 @@ $card-heading-color-default: $card-color-default;
 
 // Footer
 $footer-font-size: $fs-14-15;
+$footer-padding: spacing(10) spacing(6);
+$footer-background-color: var(--primary-clr);
+$footer-color: var(--link-clr);
