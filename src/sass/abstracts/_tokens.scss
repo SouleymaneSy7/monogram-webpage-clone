@@ -62,12 +62,12 @@ $link-color-hover: $anchor-link-hover-color;
 
 // button
 $button-font-family: $body-font-family;
-$button-font-size: $fs-12-13;
+$button-font-size: $fs-11-12;
 $button-font-weight: $font-weight-bold;
 $button-line-height: $base-line-height;
 $button-letter-spacing: rem(1px);
 $button-text-transform: $text-uppercase;
-$button-padding: rem(6px) rem(28px);
+$button-padding: rem(8.5px) rem(19px);
 $button-border-radius: $full-radius;
 $button-user-select: none;
 $button-transition: color 150ms ease-in-out, background-color 150ms ease-in-out,
