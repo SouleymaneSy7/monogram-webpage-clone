@@ -1,0 +1,112 @@
+@use "../abstracts/" as *;
+
+.card {
+  position: relative;
+
+  width: min(100%, rem(500px));
+
+  margin-inline: auto;
+  margin-block-end: 1rem;
+
+  &__header {
+    width: 100%;
+  }
+
+  &:hover .card__footer--btn {
+    opacity: 1;
+  }
+}
+
+.card__badge {
+  position: absolute;
+  top: spacing(4);
+  right: 0;
+
+  background-color: var(--secondary-clr);
+
+  & p {
+    font-size: $card-badge-font-size;
+    font-weight: $font-weight-bold;
+    color: var(--dark-clr);
+    text-transform: uppercase;
+    line-height: 1;
+    letter-spacing: rem(1px);
+
+    padding: rem(7.5px) rem(15px);
+  }
+}
+
+.card__header__img {
+  position: relative;
+
+  width: 100%;
+  height: rem(333px);
+
+  & img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    aspect-ratio: 16/ 9;
+  }
+
+  & .card__img--hover {
+    position: absolute;
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    opacity: 0;
+
+    transition: opacity 200ms ease-in-out;
+  }
+
+  &:hover .card__img--hover {
+    opacity: 1;
+  }
+}
+
+.card__footer {
+  padding-block-start: spacing(2);
+
+  & .card__footer__flex {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    & div {
+      position: relative;
+    }
+  }
+
+  & .card__footer__price {
+    position: absolute;
+    top: 0;
+    right: rem(4px);
+  }
+
+  & .card__footer--btn {
+    position: relative;
+    z-index: 200;
+
+    opacity: 0;
+    user-select: none;
+
+    transition: opacity 300ms ease-in-out;
+  }
+
+  & .card__footer__title {
+    font-size: $card-heading-font-size;
+    font-weight: $card-heading-font-weight;
+    line-height: $card-heading-line-height;
+    color: $card-heading-color-default;
+    text-transform: $card-text-transform;
+  }
+
+  & .card__footer__description {
+    font-size: $card-description-font-size;
+    font-weight: $card-description-font-weight;
+  }
+}
