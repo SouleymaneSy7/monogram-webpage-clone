@@ -9,10 +9,10 @@ body {
   line-height: $body-line-height;
 }
 
-a {
-  color: $link-color;
-}
+// a {
+//   color: $link-color;
+// }
 
-a:is(:hover, :focus-visible) {
-  color: $link-color-hover;
-}
+// a:is(:hover, :focus-visible) {
+//   color: $link-color-hover;
+// }
