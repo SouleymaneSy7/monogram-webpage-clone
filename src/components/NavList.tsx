@@ -1,10 +1,11 @@
+import { type ElementType } from "react";
 import DropDown from "./DropDown";
-import Icons from "./Icons";
+import { ShopIcon } from "@/utils";
 
 type NavListPropsTypes = {
   list: {
     title?: string | undefined;
-    icon?: string | undefined;
+    icon?: ElementType | null | undefined;
     dropDownMenu?: {
       id: number;
       dropDownTitle: string;
@@ -19,7 +20,9 @@ const NavList = ({ list }: NavListPropsTypes) => {
         <DropDown label={list.title} options={list.dropDownMenu} />
       ) : (
         <a href="#">
-          {list.title || <Icons iconSrc={list.icon} alt="Shop Bag icon" />}
+          {list.title || (
+            <ShopIcon width="25" height="25" fill="currentColor" />
+          )}
         </a>
       )}
     </li>

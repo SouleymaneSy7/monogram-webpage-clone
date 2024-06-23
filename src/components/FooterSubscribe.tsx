@@ -1,7 +1,6 @@
 import { footerSubscribe } from "@/constants";
 import Inputs from "./Inputs";
 import Button from "./Button";
-import Icons from "./Icons";
 
 const FooterSubscribe = () => {
   const { title, description, inputPlaceholder, buttonText, socialIcons } =
@@ -26,10 +25,10 @@ const FooterSubscribe = () => {
       </form>
 
       <ul className="footer--subscribe__social__list">
-        {socialIcons.map((icon, index) => (
+        {socialIcons.map((Icon, index) => (
           <li key={index} className="footer--subscribe__social__list__item">
             <a href="#">
-              <Icons iconSrc={icon} alt="social icons" />
+              <Icon fill="var(--primary-clr)" />
             </a>
           </li>
         ))}

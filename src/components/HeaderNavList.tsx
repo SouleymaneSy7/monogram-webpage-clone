@@ -1,10 +1,9 @@
 import React from "react";
-import { logoIcon, hamburgerMenuIcon, shopIcon } from "@/utils";
 import { MobileDropDown, headerDesktopNavlist } from "@/constants";
 import Button from "./Button";
-import Icons from "./Icons";
 import DropDown from "./DropDown";
 import NavList from "./NavList";
+import { LogoIcon, HamburgerMenuIcon, ShopIcon } from "@/utils";
 
 const HeaderNavList = () => {
   const { dropDownTitle } = MobileDropDown[0];
@@ -13,17 +12,17 @@ const HeaderNavList = () => {
     <React.Fragment>
       <nav className="navigation">
         <a href="#" className="navigation__logo">
-          <img src={logoIcon} alt="Monogram Website Logo Icon" />
+          <LogoIcon height={38} fill="currentColor" />
         </a>
 
         <div className="navigation--mobile">
           <Button type="button" className="navigation--mobile--hamburger-menu">
-            <Icons iconSrc={hamburgerMenuIcon} alt="Hamburger Menu Icon" />
+            <HamburgerMenuIcon width="30" height="30" fill="var(--link-clr)" />
           </Button>
 
           <div className="navigation--mobile--shop-btn">
             <Button type="button">
-              <Icons iconSrc={shopIcon} alt="A Bag Icon" />
+              <ShopIcon width="25" height="25" fill="var(--link-clr)" />
             </Button>
           </div>
 
