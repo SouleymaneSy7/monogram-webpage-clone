@@ -32,12 +32,17 @@ import {
   audioConsoleHoverImg,
   videoConsoleImg,
   videoConsoleHoverImg,
-  chevronDownIcon,
-  facebookIcon,
-  instagramIcon,
-  twitterIcon,
-  youtubeIcon,
-  shopIcon,
+  // chevronDownIcon,
+  // facebookIcon,
+  // instagramIcon,
+  // twitterIcon,
+  // youtubeIcon,
+  // shopIcon,
+  // ShopIcon,
+  InstagramIcon,
+  TwitterIcon,
+  FacebookIcon,
+  YoutubeIcon,
 } from "@/utils";
 
 // Header Navigation
@@ -114,10 +119,6 @@ export const headerDesktopNavlist = [
   {
     id: 6,
     title: "Shop",
-  },
-  {
-    id: 7,
-    icon: shopIcon,
   },
   {
     id: 8,
@@ -203,7 +204,6 @@ export const mainHero = {
   title: "A CONSOLE FOR EVERY WORKFLOW",
   description: "Discover the perfect console for yours.",
   heroImg: hero1Img,
-  heroIcon: chevronDownIcon,
 };
 
 export const sectionHero = {
@@ -348,7 +348,7 @@ export const footerSubscribe = {
     "Master productivity with Creative Console and get all the latest Monogram news.",
   inputPlaceholder: "Email Address",
   buttonText: "SUBMIT",
-  socialIcons: [instagramIcon, twitterIcon, facebookIcon, youtubeIcon],
+  socialIcons: [InstagramIcon, TwitterIcon, FacebookIcon, YoutubeIcon],
 };
 
 export const footerAddress = {
