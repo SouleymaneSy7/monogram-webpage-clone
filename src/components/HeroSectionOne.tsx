@@ -1,15 +1,14 @@
-import Icons from "./Icons";
+import { ChevronDownIcon } from "@/utils";
 import { mainHero } from "@/constants";
 
 const HeroSectionOne = () => {
-  const { title, description, heroImg, heroIcon } = mainHero;
+  const { title, description, heroImg } = mainHero;
 
   return (
-    <section className="main-hero">
-      <div className="main-hero__img">
-        <img src={heroImg} alt="A Music Pad Images" />
-      </div>
-
+    <section
+      className="main-hero"
+      style={{ backgroundImage: `url(${heroImg})` }}
+    >
       <div className="main-hero__contents">
         <div>
           <h1 className="main-hero__title">{title}</h1>
@@ -17,7 +16,7 @@ const HeroSectionOne = () => {
         </div>
 
         <a href="#Next" className="main-hero--link">
-          <Icons iconSrc={heroIcon} alt="Chevron Down Icons" />
+          <ChevronDownIcon width={45} height={45} fill="var(--light-clr)" />
         </a>
       </div>
     </section>

@@ -4,11 +4,10 @@ const HeroSectionTwo = () => {
   const { title, description, sectionHeroImg } = sectionHero;
 
   return (
-    <section className="section-hero">
-      <div className="section-hero__img">
-        <img src={sectionHeroImg} alt="A Music Pad Images" />
-      </div>
-
+    <section
+      className="section-hero"
+      style={{ backgroundImage: `url(${sectionHeroImg})` }}
+    >
       <div className="section-hero__contents">
         <div>
           <h1 className="section-hero__title">{title}</h1>
