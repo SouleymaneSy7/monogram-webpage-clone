@@ -47,15 +47,17 @@ import photoConsoleHover from "@/assets/images/photo-console-image-hover.jpg";
 import videoConsole from "@/assets/images/video-console-image.jpg";
 import videoConsoleHover from "@/assets/images/video-console-image-hover.jpg";
 
-import logo from "@/assets/images/logo.svg";
-import cross from "@/assets/images/cross-icon.svg";
-import shop from "@/assets/images/shop-icon.svg";
-import chevronDown from "@/assets/images/chevron-down.svg";
-import hamburgerMenu from "@/assets/images/hamburger-menu.svg";
-import facebook from "@/assets/images/facebook-icon.svg";
-import instagram from "@/assets/images/instagram-icon.svg";
-import twitter from "@/assets/images/twitter-icon.svg";
-import youtube from "@/assets/images/youtube-icon.svg";
+import {
+  Shop,
+  Cross,
+  Logo,
+  ChevronDown,
+  HamburgerMenu,
+  Facebook,
+  Instagram,
+  Twitter,
+  Youtube,
+} from "@/icons/Icons.component";
 
 export {
   packAudio as packAudioImg,
@@ -94,13 +96,13 @@ export {
 };
 
 export {
-  logo as logoIcon,
-  cross as crossIcon,
-  shop as shopIcon,
-  chevronDown as chevronDownIcon,
-  hamburgerMenu as hamburgerMenuIcon,
-  facebook as facebookIcon,
-  instagram as instagramIcon,
-  twitter as twitterIcon,
-  youtube as youtubeIcon,
+  Logo as LogoIcon,
+  Cross as CrossIcon,
+  Shop as ShopIcon,
+  ChevronDown as ChevronDownIcon,
+  HamburgerMenu as HamburgerMenuIcon,
+  Facebook as FacebookIcon,
+  Instagram as InstagramIcon,
+  Twitter as TwitterIcon,
+  Youtube as YoutubeIcon,
 };
