@@ -12,7 +12,7 @@ const HeaderNavList = () => {
     <React.Fragment>
       <nav className="navigation">
         <a href="#" className="navigation__logo">
-          <LogoIcon height={38} fill="currentColor" />
+          <LogoIcon  fill="currentColor" />
         </a>
 
         <div className="navigation--mobile">
