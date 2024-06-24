@@ -1,7 +1,6 @@
 @use "../abstracts/" as *;
 
 .navigation {
-
   width: 100%;
 
   display: flex;
@@ -11,7 +10,8 @@
   background-color: var(--primary-clr);
   color: var(--color-light);
 
-  padding: spacing(2) spacing(4);
+  padding: rem(7.5px);
+  // padding: spacing(2) spacing(4);
 
   & a {
     color: var(--link-clr);
@@ -22,11 +22,15 @@
   }
 
   &__logo {
-    width: rem(150px);
     height: rem(38px);
 
     display: grid;
-    place-items: center;
+    place-content: center;
+
+    & svg {
+      width: 100%;
+      height: 100%;
+    }
   }
 }
 
@@ -42,18 +46,6 @@
 
   & .navigation--mobile--shop-btn button {
     padding: $spacing-size-2;
-
-    & img {
-      width: spacing(6);
-      height: spacing(6);
-    }
-  }
-
-  & .navigation--mobile--hamburger-menu {
-    & img {
-      width: spacing(8);
-      height: spacing(8);
-    }
   }
 
   @include mq(lg) {
@@ -76,12 +68,18 @@
       align-items: center;
       gap: spacing(4);
 
+      & .dropdown-btn {
+        font-size: $fs-11-12;
+        padding: spacing(2) spacing(4);
+      }
+
       & li:nth-last-child(2) a {
-        padding: 0;
+        display: grid;
+        place-content: center;
       }
 
       & a {
-        font-size: $fs-12-13;
+        font-size: $fs-11-12;
         font-weight: $font-weight-semi-bold;
         text-decoration: none;
         text-transform: uppercase;
