@@ -3,12 +3,11 @@
 div.dropdown {
   position: relative;
 
-  width: 100%;
-  height: 100%;
-
   & .dropdown--btn {
+    font-size: rem(12px);
     font-weight: $font-weight-bold;
     color: var(--link-clr);
+    letter-spacing: rem(2px);
 
     display: flex;
     align-items: center;
@@ -27,6 +26,7 @@ div.dropdown {
 
     &:is(:hover, :focus) {
       color: var(--light-clr);
+      opacity: .70;
     }
   }
 
@@ -35,7 +35,7 @@ div.dropdown {
     top: rem(30px);
     right: 0;
     width: 100%;
-    min-width: 8em;
+    min-width: rem(120px);
 
     box-shadow: 0 1em 2.5em rgba(0, 0, 0, 0.333);
 
@@ -59,6 +59,8 @@ div.dropdown {
       }
 
       & a {
+        font-size: $fs-14-15;
+        font-weight: $font-weight-regular;
         color: var(--dark-clr);
         text-transform: uppercase;
         text-decoration: none;
@@ -70,12 +72,13 @@ div.dropdown {
 }
 
 .navigation--desktop__list li:nth-child(2) button {
-  font-size: $fs-12-13;
+  font-size: $fs-11-12;
   font-weight: $font-weight-semi-bold;
   text-transform: uppercase;
 
   &:is(:hover, :focus) {
     color: var(--light-clr);
+    opacity: .70;
   }
 }
 
