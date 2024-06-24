@@ -2,10 +2,6 @@
 
 .card {
   position: relative;
-
-  width: min(100%, rem(500px));
-
-  margin-inline: auto;
   margin-block-end: 1rem;
 
   &__header {
