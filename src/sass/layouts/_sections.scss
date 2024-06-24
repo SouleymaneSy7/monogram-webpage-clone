@@ -1,46 +1,36 @@
 @use "../abstracts/" as *;
 
 .main-hero {
-  // position: relative;
+  --hero-min-height: 450px;
+  --background-img-brightness: 0.45;
+  --background-img-saturate: 1.25;
+
+  position: relative;
+
+  display: grid;
+  place-content: center;
 
   width: 100%;
-  height: 30em;
+  height: 100%;
+  min-height: var(--hero-min-height);
 
-  &__img {
-    --background-img-brightness: 0.45;
-    --background-img-saturate: 1.25;
+  background-color: rgb(0, 0, 0, 0.15);
+  background-size: cover;
+  background-position: center;
+  // filter: brightness(var(--background-img-brightness))
+  //   saturate(var(--background-img-saturate));
 
-    width: 100%;
-    height: 100%;
-
-    min-height: 30em;
-
-    filter: brightness(var(--background-img-brightness))
-      saturate(var(--background-img-saturate));
-
-    & img {
-      width: 100%;
-      height: 100%;
-
-      min-height: 30em;
-
-      object-fit: cover;
-      aspect-ratio: 16 / 9;
-    }
+  @include mq(lg) {
+    --hero-min-height: 675px;
   }
 
   &__contents {
-    // position: absolute;
-    // top: 50%;
-    // left: 50%;
-    // transform: translate(-50%, -50%);
-
     width: 100%;
-    max-width: 30em;
-
     text-align: center;
 
     & div {
+      width: min(100% - 2rem, rem(450px));
+      margin-inline: auto;
       margin-block: spacing(10);
     }
 
@@ -61,14 +51,18 @@
 
     & .main-hero--link {
       display: inline-block;
-
       width: 100%;
 
-      & img {
-        width: rem(59px);
-        height: rem(59px);
+      position: absolute;
+      bottom: rem(20px);
+      left: 0;
 
-        margin-inline: auto;
+      & svg {
+        transition: transform 200ms ease-in-out;
+      }
+
+      &:hover svg {
+        transform: scale(1.5);
       }
     }
   }
