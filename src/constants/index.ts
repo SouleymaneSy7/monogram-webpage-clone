@@ -38,7 +38,7 @@ import {
   // twitterIcon,
   // youtubeIcon,
   // shopIcon,
-  // ShopIcon,
+  ShopIcon,
   InstagramIcon,
   TwitterIcon,
   FacebookIcon,
@@ -119,6 +119,10 @@ export const headerDesktopNavlist = [
   {
     id: 6,
     title: "Shop",
+  },
+  {
+    id: 7,
+    icon: ShopIcon,
   },
   {
     id: 8,
