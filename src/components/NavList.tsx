@@ -1,11 +1,10 @@
-import { type ElementType } from "react";
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import DropDown from "./DropDown";
-import { ShopIcon } from "@/utils";
 
 type NavListPropsTypes = {
   list: {
     title?: string | undefined;
-    icon?: ElementType | null | undefined;
+    icon?: any;
     dropDownMenu?: {
       id: number;
       dropDownTitle: string;
@@ -14,15 +13,17 @@ type NavListPropsTypes = {
 };
 
 const NavList = ({ list }: NavListPropsTypes) => {
+  const { icon } = list;
+
+  const Icon = icon;
+
   return (
     <li>
       {list.dropDownMenu ? (
         <DropDown label={list.title} options={list.dropDownMenu} />
       ) : (
         <a href="#">
-          {list.title || (
-            <ShopIcon width="25" height="25" fill="currentColor" />
-          )}
+          {list.title || <Icon width="25" height="25" fill="currentColor" />}
         </a>
       )}
     </li>
