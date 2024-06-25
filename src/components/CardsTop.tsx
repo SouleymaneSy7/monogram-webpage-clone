@@ -4,7 +4,7 @@ import Cards from "./Cards";
 
 const CardsTop = () => {
   return (
-    <section className="top-cards">
+    <section className="top-cards" id="Next">
       <div className="container">
         {topCards.map(
           ({
