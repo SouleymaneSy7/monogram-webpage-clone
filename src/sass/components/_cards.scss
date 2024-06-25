@@ -1,6 +1,8 @@
 @use "../abstracts/" as *;
 
 .card {
+  --card-img-height: #{rem(333px)};
+
   position: relative;
   margin-block-end: 1rem;
 
@@ -36,7 +38,7 @@
   position: relative;
 
   width: 100%;
-  height: rem(333px);
+  height: var(--card-img-height);
 
   & img {
     width: 100%;
