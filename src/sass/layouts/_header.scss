@@ -5,5 +5,9 @@
   z-index: 10000;
 
   width: 100%;
-  padding: $spacing-size-2;
+  padding: spacing(2);
+
+  @include mq(sm) {
+    padding: rem(15px);
+  }
 }
