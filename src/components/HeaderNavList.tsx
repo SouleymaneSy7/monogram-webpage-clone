@@ -8,11 +8,13 @@ import { LogoIcon, HamburgerMenuIcon, ShopIcon } from "@/utils";
 const HeaderNavList = () => {
   const { dropDownTitle } = MobileDropDown[0];
 
+  const newTitle = dropDownTitle.replace(" ($)", "");
+
   return (
     <React.Fragment>
       <nav className="navigation">
         <a href="#" className="navigation__logo">
-          <LogoIcon  fill="currentColor" />
+          <LogoIcon fill="currentColor" />
         </a>
 
         <div className="navigation--mobile">
@@ -27,7 +29,7 @@ const HeaderNavList = () => {
           </div>
 
           <div className="navigation--mobile--dropdown">
-            <DropDown label={dropDownTitle} options={MobileDropDown} />
+            <DropDown label={newTitle} options={MobileDropDown} />
           </div>
         </div>
 
