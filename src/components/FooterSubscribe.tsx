@@ -1,4 +1,4 @@
-import { footerSubscribe } from "@/constants";
+import { footerCopyright, footerSubscribe } from "@/constants";
 import Inputs from "./Inputs";
 import Button from "./Button";
 
@@ -33,6 +33,10 @@ const FooterSubscribe = () => {
           </li>
         ))}
       </ul>
+
+      <div className="footer--subscribe__copyright">
+        <p className="footer--subscribe__text">{footerCopyright}</p>
+      </div>
     </div>
   );
 };
