@@ -1,4 +1,3 @@
-// import React from "react";
 import { footerAddress } from "@/constants";
 
 const FooterAddress = () => {
