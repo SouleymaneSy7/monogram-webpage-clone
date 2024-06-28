@@ -3,18 +3,23 @@
 @use "./sizes" as *;
 @use "./functions" as *;
 
-// contextual content
+// ===========================
+//     Contextual Contents
+// ===========================
+
 $text-color: custom-color(primary);
 $anchor-link-color: custom-color(link);
 $anchor-link-hover-color: custom-color(secondary);
 
 $base-line-height: 1.5;
 $title-line-height: 1.2;
-$title-font-size: $fs-39-40;
 $text-uppercase: uppercase;
 $full-radius: 100vmax;
 
-// container
+// =====================
+//      Container
+// =====================
+
 $container-min-margin-inline: spacing(4);
 $container-max-width: rem(1140px);
 $container-max-width-xlg: rem(1550px);
@@ -22,87 +27,250 @@ $container-max-width-lg: rem(960px);
 $container-max-width-md: rem(720px);
 $container-max-width-sm: rem(540px);
 
-// body
+// =====================
+//         Body
+// =====================
+
 $body-font-family: $font-family-base;
 $body-font-weight: $font-weight-regular;
-$body-font-size: $fs-16-17;
+$body-font-size: rem(16px);
 $body-text-color: $text-color;
 $body-background-color: $color-light;
 $body-line-height: $base-line-height;
 
-// heading
-$heading-font-family: $font-family-base;
-$heading-color-default: $color-primary;
-$heading-color-accent: $color-secondary;
-$heading-font-weight: $font-weight-bold;
-$heading-letter-spacing: rem(4px);
-$heading-line-height: $title-line-height;
-$heading-text-transform: $text-uppercase;
+// =====================
+//      Navigation
+// =====================
 
-// Main Heading
-$heading-main-font-size: $title-font-size;
+// Navigation
+$fs-navigation: $fs-11-12;
+$fw-navigation: $font-weight-semi-bold;
+$navigation-width: 100%;
+$navigation-bg-color: var(--primary-clr);
+$navigation-color: var(--color-light);
+$navigation-padding: rem(7.5px);
 
-// Sub Heading
-$heading-sub-font-size: $fs-20-21;
-$heading-sub-letter-spacing: rem(2px);
+// Navigation Logo
+$navigation-logo-height: rem(38px);
 
-// Heading Sub Level 2
-$heading-sub-level-2-font-size: $fs-12-13;
-$heading-sub-level-2-letter-spacing: rem(1px);
+// Navigation Link
+$navigation-link-color: var(--link-clr);
+$navigation-link-hover-color: var(--secondary-clr);
 
-// Lead
-$lead-font-size: $fs-20-21;
-$lead-font-weight: $font-weight-regular;
+// Navigation Mobile
 
-// link
-$link-font-size: $fs-12-13;
-$link-font-weight: $font-weight-semi-bold;
-$link-color: $anchor-link-color;
-$link-color-hover: $anchor-link-hover-color;
+// Navigation Desktop
+$navigation-desktop-letter-spacing: rem(2px);
+$navigation-desktop-padding: spacing(2) spacing(4);
+$navigation-desktop-text-transform: $text-uppercase;
+$navigation-desktop-text-decoration: none;
 
-// button
-$button-font-family: $body-font-family;
-$button-font-size: $fs-11-12;
-$button-font-weight: $font-weight-bold;
-$button-line-height: $base-line-height;
-$button-letter-spacing: rem(1px);
-$button-text-transform: $text-uppercase;
-$button-padding: rem(8.5px) rem(19px);
-$button-border-radius: $full-radius;
-$button-user-select: none;
-$button-transition: color 150ms ease-in-out, background-color 150ms ease-in-out,
-  border-color 150ms ease-in-out;
+// Mobile Navbar Container
+$mobile-navbar-container-top: 0;
+$mobile-navbar-container-left: 0;
+$mobile-navbar-container-width: 100%;
+$mobile-navbar-container-height: 100%;
+$mobile-navbar-container-z-index: 100000;
+$mobile-navbar-container-bg-color: rgba(0, 0, 0, 0.35);
+$mobile-navbar-container-transform: translateX(-100%);
+$mobile-navbar-container-transition: transform 300ms ease-in-out,
+  all 300ms 300ms ease-in-out;
+$mobile-navbar-container-active-transform: translateX(0%);
 
-// card btn
-$card-button-background-color: $color-primary;
-$card-button-text-color: $color-light;
-$card-button-border-color: $color-primary;
+// Mobile Navbar
+$mobile-navbar-width: rem(350px);
+$mobile-navbar-height: 100%;
+$mobile-navbar-bg-color: var(--primary-clr);
+$mobile-navbar-padding: rem(15px);
 
-// footer btn
-$footer-button-background-color: $color-link;
-$footer-button-text-color: $color-dark;
-$footer-button-border-color: $color-link;
+$mobile-navbar-btn-padding: spacing(4);
 
-// navigation
-$navigation-background-color: $color-primary;
-$navigation-font-size: $fs-11-12;
-$navigation-gap: size(1);
+// Mobile Navbar Navigation
+$mobile-navbar-navigation-padding: 0 rem(15px) rem(15px) rem(90px);
 
-// card
-$card-heading-font-size: $fs-20-21;
-$card-description-font-size: $fs-14-15;
-$card-description-font-weight: $font-weight-regular;
-$card-badge-font-size: $fs-12-13;
-$card-heading-font-weight: $font-weight-bold;
-$card-heading-line-height: $title-line-height;
-$card-letter-spacing: rem(1.5px);
-$card-text-transform: $text-uppercase;
-$card-color-default: $color-primary;
-$card-background-default-color: $color-light;
-$card-heading-color-default: $card-color-default;
+$mobile-navbar-link-border-width: rem(1px);
+$mobile-navbar-link-border-line-style: solid;
+$mobile-navbar-link-border-color: rgba(0, 0, 0, 0.125);
 
-// Footer
-$footer-font-size: $fs-14-15;
+$fs-mobile-navbar-link: rem(15px);
+$mobile-navbar-link-text-transform: $text-uppercase;
+$mobile-navbar-link-color: var(--link-clr);
+$mobile-navbar-link-letter-spacing: rem(1.5px);
+$mobile-navbar-link-padding: rem(15px) 0;
+$mobile-navbar-link-hover-color: var(--secondary-clr);
+
+// =====================
+//     Hamburger Menu
+// =====================
+
+$navigation-mobile-hamburger-menu-padding: spacing(1) spacing(3);
+
+// =====================
+//       Dropdown
+// =====================
+
+$fs-mobile-dropdown-btn: $fs-14-15;
+$fw-mobile-dropdown-btn: $font-weight-bold;
+$mobile-dropdown-btn-letter-spacing: rem(2px);
+
+// DropDown Button
+$fs-dropdown-btn: rem(12px);
+$fw-dropdown-btn: $font-weight-bold;
+$dropdown-btn-color: var(--link-clr);
+$dropdown-btn-letter-spacing: rem(2px);
+$dropdown-btn-gap: spacing(1);
+$dropdown-btn-hover-color: var(--light-clr);
+$dropdown-btn-hover-opacity: 0.7;
+
+// DropDown After
+$dropown-after-border-line-width: rem(4.8px);
+$dropdown-after-border-line-style: solid;
+$dropdown-after-border-color: transparent;
+
+// DropDown Contents
+$fs-dropdown-content: $fs-14-15;
+$fw-dropdown-content: $font-weight-regular;
+$dropdown-content-letter-spacing: rem(2px);
+$dropdown-content-top: rem(30px);
+$dropdown-content-right: 0;
+$dropdown-content-width: 100%;
+$dropdown-content-min-width: rem(120px);
+$dropdown-content-bg-color: var(--light-clr);
+$dropdown-content-padding: spacing(2);
+$dropdown-content-shadow-color: rgba(0, 0, 0, 0.333);
+$dropdown-content-box-shadow: 0 spacing(4) spacing(9)
+  $dropdown-content-shadow-color;
+
+// DropDown Content Link
+$fs-dropdown-link: $fs-14-15;
+$fw-dropdown-link: $font-weight-regular;
+$dropdown-link-color: var(--dark-clr);
+$dropdown-link-text-transform: $text-uppercase;
+$dropdown-link-letter-spacing: rem(2px);
+$dropdown-link-text-decoration: none;
+$dropdown-link-padding: spacing(1);
+$dropdown-link-hover-bg-color: var(--primary-clr);
+$dropdown-link-hover-color: var(--light-clr);
+
+// =====================
+//       Main Hero
+// =====================
+
+$fs-main-hero-title: $fs-36-37;
+$fw-main-hero-title: $font-weight-bold;
+$main-hero-title-letter-spacing: rem(4px);
+$main-hero-title-line-height: $title-line-height;
+$main-hero-title-margin-bottom: spacing(4);
+
+$fs-main-hero-description: $fs-17-18;
+$fw-main-hero-description: $font-weight-regular;
+
+// =====================
+//         Cards
+// =====================
+
+// Card
+$fs-card-title: $fs-17-18;
+$fw-card-title: $font-weight-bold;
+$card-title-letter-spacing: rem(1.5px);
+$card-title-text-transform: $text-uppercase;
+$card-title-line-height: $title-line-height;
+
+// Card Images
+$card-img-width: 100%;
+$card-img-height: 100%;
+$card-img-object-fit: cover;
+$card-img-aspect: #{16 / 9};
+
+// Card Images Hover
+$card-img-hover-inset: 0;
+$card-img-hover-width: 100%;
+$card-img-hover-height: 100%;
+$card-img-hover-opacity-start: 0;
+$card-img-hover-opacity-end: 1;
+$card-img-hover-transition: opacity 200ms ease-in-out;
+
+// Card Badge
+$fs-card-badge: $fs-11-12;
+$fw-card-badge: $font-weight-bold;
+$card-badge-letter-spacing: rem(1px);
+$card-badge-text-transform: $text-uppercase;
+$card-badge-line-height: 1;
+$card-badge-top: spacing(4);
+$card-badge-right: 0;
+$card-badge-bg-color: var(--secondary-clr);
+$card-badge-padding: rem(7.5px) rem(15px);
+
+// Card Footer
+$card-footer-padding: spacing(2);
+$card-footer-child-min-width: rem(150px);
+
+// Card Description
+$fs-card-description: $fs-12-13;
+$fw-card-description: $font-weight-regular;
+
+// Card Price
+$fs-card-price: $fs-14-15;
+$fw-card-price: $font-weight-regular;
+$card-price-top: 0;
+$card-price-right: rem(4px);
+
+// Card Btn
+$fs-card-btn: $fs-10-11;
+$fw-card-btn: $font-weight-bold;
+$card-btn-letter-spacing: rem(1px);
+$card-btn-top: 0;
+$card-btn-right: 0;
+$card-btn-z-index: 100;
+$card-btn-opacity: 0;
+$card-btn-user-select: none;
+$card-btn-transition: opacity 300ms ease-in-out;
+$card-btn-text-transform: $text-uppercase;
+$card-btn-border-radius: $full-radius;
+$card-btn-padding: rem(8.5px) rem(19px);
+
+// =====================
+//      Section Hero
+// =====================
+
+$fs-section-hero-title: $fs-36-37;
+$fw-section-hero-title: $font-weight-bold;
+$section-hero-title-letter-spacing: rem(4px);
+$section-hero-title-text-transform: $text-uppercase;
+$section-hero-margin-bottom: spacing(5);
+$section-hero-padding-top: spacing(10);
+
+// Section Description
+$fs-section-hero-description: $fs-17-18;
+$fw-section-hero-description: $font-weight-regular;
+$section-hero-description-line-height: $base-line-height;
+
+// =====================
+//      Footer
+// =====================
+
 $footer-padding: spacing(10) spacing(6);
-$footer-background-color: var(--primary-clr);
-$footer-color: var(--link-clr);
+
+// Footer Title
+$fs-footer-title: $fs-10-11;
+$fw-footer-title: $font-weight-bold;
+$footer-title-letter-spacing: rem(1px);
+$footer-title-text-transform: $text-uppercase;
+
+
+// Footer Inputs
+$fs-footer-input: $fs-13-14;
+$fw-footer-input: $font-weight-regular;
+$footer-input-width: rem(187px);
+$footer-input-height: rem(28px);
+$footer-input-color: var(--link-clr);
+$footer-input-placeholder-color: var(--light-clr);
+$footer-input-bg-color: var(--primary-clr);
+$footer-input-border-line-width: rem(1px);
+$footer-input-border-line-style: solid;
+$footer-input-border-color: var(--link-clr);
+$footer-input-padding: rem(3px) rem(5px);
+$footer-input-opacity: 0.75;
+
+$fs-footer-text: $fs-12-13;
+$fw-footer-text: $font-weight-regular;

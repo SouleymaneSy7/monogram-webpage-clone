@@ -1,9 +1,9 @@
 @use "../abstracts/" as *;
 
 .footer {
-  color: $footer-color;
+  color: var(--link-clr);
 
-  background-color: $footer-background-color;
+  background-color: var(--primary-clr);
 
   padding: $footer-padding;
 
@@ -16,7 +16,7 @@
   }
 
   & .footer__children > * + * {
-    margin-block-start: 1rem;
+    margin-block-start: spacing(4);
   }
 
   & .container .footer__children:not(:nth-last-child(1)) {
@@ -25,9 +25,14 @@
 
   & a {
     text-decoration: none;
-    transition: all 200ms ease-in-out;
+
+    @include x-transition(
+      color 200ms ease-in-out,
+      text-decoration 200ms ease-in-out
+    );
 
     &:is(:hover, :focus-visible) {
+      color: var(--secondary-clr);
       text-decoration: underline;
     }
   }
@@ -39,19 +44,19 @@
   }
 
   & .footer--subscribe__social__list {
-    display: flex;
-    align-items: center;
+    @include x-flex-align;
     gap: spacing(2);
 
     & li {
-      --size: 1.75rem;
+      --size: #{spacing(7)};
 
       width: var(--size);
       height: var(--size);
-      border-radius: $full-radius;
-      background-color: $link-color;
 
-      padding: 0.35rem;
+      @include x-border-radius($full-radius);
+      background-color: $anchor-link-color;
+
+      padding: rem(5.6px);
 
       & svg {
         width: 100%;
@@ -60,10 +65,16 @@
     }
   }
 
-  & h3,
+  & h3 {
+    font-size: $fs-footer-title;
+    font-weight: $fw-footer-title;
+    text-transform: $footer-title-text-transform;
+    letter-spacing: $footer-title-letter-spacing;
+  }
   p,
   a {
-    font-size: $footer-font-size;
+    font-size: $fs-footer-text;
+    font-weight: $fw-footer-text;
   }
 }
 

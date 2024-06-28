@@ -1,5 +1,9 @@
 @use "../abstracts/" as *;
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: $body-font-family;
   font-weight: $body-font-weight;
@@ -9,11 +13,3 @@ body {
   line-height: $body-line-height;
   overflow-x: hidden;
 }
-
-// a {
-//   color: $link-color;
-// }
-
-// a:is(:hover, :focus-visible) {
-//   color: $link-color-hover;
-// }

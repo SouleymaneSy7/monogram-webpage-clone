@@ -1,31 +1,32 @@
 @use "../abstracts/" as *;
 
 .navigation {
-  width: 100%;
+  width: $navigation-width;
 
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  background-color: $navigation-bg-color;
+  color: $navigation-color;
 
-  background-color: var(--primary-clr);
-  color: var(--color-light);
+  padding: $navigation-padding;
 
-  padding: rem(7.5px);
-  // padding: spacing(2) spacing(4);
+  & .container {
+    --max-width: #{$container-max-width-xlg};
+    --padding: #{rem(1px)};
+
+    @include x-flex-between;
+  }
 
   & a {
-    color: var(--link-clr);
+    color: $navigation-link-color;
 
     &:is(:hover, :focus-visible) {
-      color: var(--secondary-clr);
+      color: $navigation-link-hover-color;
     }
   }
 
   &__logo {
-    height: rem(38px);
+    height: $navigation-logo-height;
 
-    display: grid;
-    place-content: center;
+    @include x-grid-center;
 
     & svg {
       width: 100%;
@@ -35,17 +36,10 @@
 }
 
 .navigation--mobile {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-
-  & img {
-    width: spacing(6);
-    height: spacing(6);
-  }
+  @include x-flex-between;
 
   & .navigation--mobile--shop-btn button {
-    padding: $spacing-size-2;
+    padding: spacing(2);
   }
 
   @include mq(lg) {
@@ -64,36 +58,144 @@
     }
 
     &__list {
-      display: flex;
-      align-items: center;
-      gap: spacing(4);
+      @include x-flex-align;
+      gap: spacing(1);
 
       & .dropdown-btn {
-        font-size: $fs-11-12;
+        font-size: $fs-navigation;
+
         padding: spacing(2) spacing(4);
+      }
+
+      & li:nth-child(2),
+      & li:nth-last-child(1) {
+        margin-block-start: rem(2.5px);
+
+        & .dropdown-btn {
+          font-weight: $fw-navigation;
+        }
+      }
+
+      & li:nth-last-child(3):not(li.dropdown--content__list__items) a {
+        font-weight: $font-weight-bold;
       }
 
       & li:nth-last-child(2) a {
-        display: grid;
-        place-content: center;
+        @include x-grid-center;
       }
 
       & a {
-        font-size: $fs-11-12;
-        font-weight: $font-weight-semi-bold;
-        text-decoration: none;
-        text-transform: uppercase;
+        font-size: $fs-navigation;
+        font-weight: $fw-navigation;
+        text-decoration: $navigation-desktop-text-decoration;
+        text-transform: $navigation-desktop-text-transform;
+        letter-spacing: $navigation-desktop-letter-spacing;
 
-        padding: spacing(2) spacing(4);
-
-        width: spacing(6);
-        height: spacing(6);
-
-        & img {
-          width: spacing(6);
-          height: spacing(6);
-        }
+        padding: $navigation-desktop-padding;
       }
+    }
+  }
+}
+
+#mobile-navbar-root {
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+
+  @include mq(lg) {
+    display: none;
+  }
+}
+
+.mobile-navbar-container {
+  position: fixed;
+  top: $mobile-navbar-container-top;
+  left: $mobile-navbar-container-left;
+  z-index: $mobile-navbar-container-z-index;
+
+  width: $mobile-navbar-container-width;
+  height: $mobile-navbar-container-height;
+
+  background-color: $mobile-navbar-container-bg-color;
+
+  @include x-transform($mobile-navbar-container-transform);
+
+  transition: $mobile-navbar-container-transition;
+
+  overflow: hidden;
+
+  &.active {
+    @include x-transform($mobile-navbar-container-active-transform);
+  }
+}
+
+.mobile-navbar {
+  width: $mobile-navbar-width;
+  height: $mobile-navbar-height;
+
+  background-color: $mobile-navbar-bg-color;
+
+  padding: $mobile-navbar-padding;
+}
+
+.mobile-navbar__header {
+  @include x-flex-between;
+
+  margin-block-end: spacing(5);
+
+  &__logo {
+    height: $navigation-logo-height;
+
+    & svg {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  &--btn {
+    padding: $mobile-navbar-btn-padding;
+  }
+}
+
+.mobile-navbar__navigation {
+  padding: $mobile-navbar-navigation-padding;
+
+  &__list {
+    @include x-flex-column-flex-start;
+  }
+
+  & li {
+    border-bottom: $mobile-navbar-link-border-width
+      $mobile-navbar-link-border-line-style $mobile-navbar-link-border-color;
+
+    &:nth-child(3),
+    &:nth-child(4),
+    &:nth-child(5),
+    &:nth-child(6) {
+      margin-inline-start: spacing(6);
+    }
+
+    &:nth-last-child(1) {
+      border-bottom: none;
+
+      & a {
+        font-weight: $font-weight-bold;
+      }
+    }
+  }
+
+  & a {
+    display: inline-block;
+
+    font-size: $fs-mobile-navbar-link;
+    text-transform: $mobile-navbar-link-text-transform;
+    color: $mobile-navbar-link-color;
+    letter-spacing: $mobile-navbar-link-letter-spacing;
+
+    padding: $mobile-navbar-link-padding;
+
+    &:is(:hover, :focus-visible) {
+      color: $mobile-navbar-link-hover-color;
     }
   }
 }

@@ -7,14 +7,13 @@ button {
   outline: none;
   background: none;
 
-  display: grid;
-  place-items: center;
+  @include x-grid-center;
 
   cursor: pointer;
 }
 
 button.navigation--mobile--hamburger-menu {
-  padding: spacing(1) spacing(3);
+  padding: $navigation-mobile-hamburger-menu-padding;
 }
 
 button[type="submit"],
@@ -22,25 +21,17 @@ button.card__footer--btn {
   --button-bg-color: var(--primary-clr);
   --button-text-color: var(--light-clr);
 
-  -webkit-appearance: none;
-  appearance: none;
-  border: none;
-  outline: none;
-
-  display: grid;
-  place-items: center;
-
-  font-family: inherit;
-  font-weight: $button-font-weight;
-  font-size: $button-font-size;
+  font-weight: $fw-card-btn;
+  font-size: $fs-card-btn;
   color: var(--button-text-color);
-  text-transform: $button-text-transform;
+  text-transform: $card-btn-text-transform;
 
   background-color: var(--button-bg-color);
-  border-radius: $button-border-radius;
+  @include x-border-radius($card-btn-border-radius);
 
-  padding: $button-padding;
-  cursor: pointer;
+  padding: $card-btn-padding;
+
+  @include x-transition($card-btn-transition);
 }
 
 button.footer--subscribe--btn {

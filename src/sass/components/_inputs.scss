@@ -5,20 +5,24 @@
   appearance: none;
   outline: none;
 
-  width: rem(187px);
-  height: rem(28px);
+  width: $footer-input-width;
+  height: $footer-input-height;
 
-  font-size: $footer-font-size;
-  font-weight: $font-weight-regular;
-  color: var(--link-clr);
+  font-size: $fs-footer-input;
+  font-weight: $fw-footer-input;
+  color: $footer-input-color;
 
-  background-color: var(--primary-clr);
-  border: 1px solid var(--link-clr);
-
-  padding: rem(3px) rem(5px);
+  background-color: $footer-input-bg-color;
+  @include x-border(
+    all,
+    $footer-input-border-line-width,
+    $footer-input-border-line-style,
+    $footer-input-border-color
+  );
+  padding: $footer-input-padding;
 
   &::placeholder {
-    color: var(--light-clr);
-    opacity: .75;
+    color: $footer-input-placeholder-color;
+    @include x-opacity($footer-input-opacity);
   }
 }

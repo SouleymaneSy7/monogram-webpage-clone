@@ -1,84 +1,97 @@
 @use "../abstracts/" as *;
 
-div.dropdown {
+.dropdown {
   position: relative;
+}
 
-  & .dropdown--btn {
-    font-size: rem(12px);
-    font-weight: $font-weight-bold;
-    color: var(--link-clr);
-    letter-spacing: rem(2px);
+.dropdown--btn {
+  font-size: $fs-dropdown-btn;
+  font-weight: $fw-dropdown-btn;
+  color: $dropdown-btn-color;
+  letter-spacing: $dropdown-btn-letter-spacing;
 
-    display: flex;
-    align-items: center;
-    gap: spacing(2);
+  @include x-flex-align;
+  gap: $dropdown-btn-gap;
 
-    &::after {
-      content: "";
+  &::after {
+    content: "";
 
-      display: inline-block;
+    display: inline-block;
 
-      border-left: 0.3rem solid transparent;
-      border-right: 0.3rem solid transparent;
-      border-top: 0.3rem solid;
-      border-bottom: 0;
-    }
+    @include x-border(
+      left,
+      $dropown-after-border-line-width,
+      $dropdown-after-border-line-style,
+      $dropdown-after-border-color
+    );
 
-    &:is(:hover, :focus) {
-      color: var(--light-clr);
-      opacity: .70;
-    }
+    @include x-border(
+      right,
+      $dropown-after-border-line-width,
+      $dropdown-after-border-line-style,
+      $dropdown-after-border-color
+    );
+
+    border-top: $dropown-after-border-line-width
+      $dropdown-after-border-line-style;
+    border-bottom: 0;
   }
 
-  & .dropdown--content {
-    position: absolute;
-    top: rem(30px);
-    right: 0;
-    width: 100%;
-    min-width: rem(120px);
+  &:is(:hover, :focus-visible) {
+    color: $dropdown-btn-hover-color;
+    @include x-opacity($dropdown-btn-hover-opacity);
+  }
+}
 
-    box-shadow: 0 1em 2.5em rgba(0, 0, 0, 0.333);
+.dropdown--content {
+  position: absolute;
+  top: $dropdown-content-top;
+  right: $dropdown-content-right;
+  width: $dropdown-content-width;
+  min-width: $dropdown-content-min-width;
 
-    & ul {
-      text-align: center;
-      background-color: var(--light-clr);
+  @include x-box-shadow($dropdown-content-box-shadow);
 
-      padding-block: spacing(2);
+  & ul {
+    text-align: center;
+    background-color: $dropdown-content-bg-color;
 
-      & li {
-        padding-block: spacing(1);
-        cursor: pointer;
+    padding-block: $dropdown-content-padding;
 
-        &:is(:hover, :focus) {
-          background-color: var(--primary-clr);
+    & li {
+      padding-block: $dropdown-link-padding;
+      cursor: pointer;
 
-          & > a {
-            color: var(--light-clr);
-          }
+      &:is(:hover, :focus-visible, :active) {
+        background-color: $dropdown-link-hover-bg-color;
+
+        & > a {
+          color: $dropdown-link-hover-color;
         }
       }
+    }
 
-      & a {
-        font-size: $fs-14-15;
-        font-weight: $font-weight-regular;
-        color: var(--dark-clr);
-        text-transform: uppercase;
-        text-decoration: none;
+    & a {
+      font-size: $fs-dropdown-link;
+      font-weight: $fw-dropdown-link;
+      color: $dropdown-link-color;
+      text-transform: $dropdown-link-text-transform;
+      text-decoration: $dropdown-link-text-decoration;
 
-        letter-spacing: rem(2px);
-      }
+      letter-spacing: $dropdown-link-text-decoration;
     }
   }
 }
 
-.navigation--desktop__list li:nth-child(2) button {
+.navigation--desktop__list li:nth-child(2) button,
+.navigation--desktop__list li:nth-last-child(1) button {
   font-size: $fs-11-12;
   font-weight: $font-weight-semi-bold;
   text-transform: uppercase;
 
   &:is(:hover, :focus) {
     color: var(--light-clr);
-    opacity: .70;
+    @include x-opacity(0.7);
   }
 }
 

@@ -1,22 +1,19 @@
 @use "../abstracts/" as *;
 
 .main-hero {
-  --hero-min-height: 450px;
-  --background-img-brightness: 0.45;
-  --background-img-saturate: 1.25;
+  --hero-min-height: #{rem(450px)};
 
   position: relative;
 
   z-index: 1000;
 
-  display: grid;
-  place-content: center;
+  @include x-grid-center;
 
   width: 100%;
   height: 100%;
   min-height: var(--hero-min-height);
 
-  background-size: cover;
+  @include x-background-size(cover);
   background-repeat: no-repeat;
   background-position: center;
 
@@ -34,8 +31,8 @@
     );
   }
 
-  @include mq(lg) {
-    --hero-min-height: 675px;
+  @include mq(md) {
+    --hero-min-height: #{rem(675px)};
   }
 
   &__contents {
@@ -49,17 +46,18 @@
     }
 
     & .main-hero__title {
-      font-size: $heading-main-font-size;
-      font-weight: $heading-font-weight;
-      line-height: $heading-line-height;
-      letter-spacing: $heading-letter-spacing;
+      font-size: $fs-main-hero-title;
+      font-weight: $fw-main-hero-title;
+      line-height: $main-hero-title-line-height;
+      letter-spacing: $main-hero-title-letter-spacing;
       color: var(--link-clr);
 
-      margin-block-end: spacing(4);
+      margin-block-end: $main-hero-title-margin-bottom;
     }
 
     & .main-hero__description {
-      font-size: $heading-sub-font-size;
+      font-size: $fs-main-hero-description;
+      font-weight: $fw-main-hero-description;
       color: var(--link-clr);
     }
 
@@ -72,7 +70,7 @@
       left: 0;
 
       & svg {
-        transition: transform 200ms ease-in-out;
+        @include x-transition(transform 200ms ease-in-out);
       }
 
       &:hover svg {
@@ -91,24 +89,24 @@
 
   text-align: center;
 
-  background-size: cover;
+  @include x-background-size(cover);
   background-repeat: no-repeat;
   background-position: center bottom;
 
   &__title {
-    font-size: $fs-39-40;
-    font-weight: $font-weight-bold;
-    text-transform: uppercase;
-    letter-spacing: rem(4px);
+    font-size: $fs-section-hero-title;
+    font-weight: $fw-section-hero-title;
+    text-transform: $section-hero-title-text-transform;
+    letter-spacing: $section-hero-title-letter-spacing;
 
-    margin-block-end: spacing(5);
-    padding-block-start: spacing(10);
+    margin-block-end: $section-hero-margin-bottom;
+    padding-block-start: $section-hero-padding-top;
   }
 
   &__description {
-    font-size: $heading-sub-font-size;
-    font-weight: $font-weight-regular;
-    line-height: 1.5;
+    font-size: $fs-section-hero-description;
+    font-weight: $fw-section-hero-description;
+    line-height: $section-hero-description-line-height;
   }
 
   @include mq(md) {
@@ -144,6 +142,7 @@
 
     & .card:nth-last-child(1) {
       --card-min-width: 100%;
+      --card-img-height: #{rem(452px)};
     }
   }
 }
@@ -163,6 +162,10 @@
 
     --card-min-width: #{rem(545px)};
     --gap: #{spacing(7)};
+
+    & .card {
+      --card-img-height: #{rem(375px)};
+    }
   }
 }
 

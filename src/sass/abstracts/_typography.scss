@@ -1,10 +1,7 @@
 // font-family
 $ff-serif: "Prompt", sans-serif;
-$ff-mono: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
-  "Courier New", monospace;
 
 $font-family-base: $ff-serif;
-$font-family-accent: $ff-mono;
 
 // font-weight
 $-fw-300: 300;
@@ -15,11 +12,16 @@ $font-weight-regular: $-fw-300;
 $font-weight-semi-bold: $-fw-400;
 $font-weight-bold: $-fw-600;
 
-// font-size
+// ============================
+//        Fluid Font Size
+// ============================
+
+/* @link https://utopia.fyi/clamp/calculator?a=576,1200,11—12|36—37|37—38|17—18|18—19|11—12|12—13|16—16|18—19|13—14|10—11|14—15|11—12|9—10&p=fs */
+
+$fs-10-11: clamp(0.625rem, 0.5673rem + 0.1603vi, 0.6875rem);
 $fs-11-12: clamp(0.6875rem, 0.6298rem + 0.1603vi, 0.75rem);
 $fs-12-13: clamp(0.75rem, 0.6923rem + 0.1603vi, 0.8125rem);
 $fs-13-14: clamp(0.8125rem, 0.7548rem + 0.1603vi, 0.875rem);
 $fs-14-15: clamp(0.875rem, 0.8173rem + 0.1603vi, 0.9375rem);
-$fs-16-17: clamp(1rem, 0.9423rem + 0.1603vi, 1.0625rem);
-$fs-20-21: clamp(1.25rem, 1.1923rem + 0.1603vi, 1.3125rem);
-$fs-39-40: clamp(2.4375rem, 2.3798rem + 0.1603vi, 2.5rem);
+$fs-17-18: clamp(1.0625rem, 1.0048rem + 0.1603vi, 1.125rem);
+$fs-36-37: clamp(2.25rem, 2.1923rem + 0.1603vi, 2.3125rem);

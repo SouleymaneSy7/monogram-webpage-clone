@@ -45,25 +45,36 @@
   }
 }
 
-// =============================
-//        heading mixins
-// =============================
+// =========================
+//      Customs Mixins
+// =========================
 
-@mixin heading(
-  $fs,
-  $color,
-  $heading-text-transform: uppercase,
-  $heading-letter-spacing: rem(2px),
-  $heading-font-weight: 600,
-  $heading-line-height: 1.5
-) {
-  font-size: $fs;
-  color: $color;
+@mixin x-grid-center {
+  display: grid;
+  place-items: center;
+}
 
-  text-transform: $heading-text-transform;
-  letter-spacing: $heading-letter-spacing;
-  font-weight: $heading-font-weight;
-  line-height: $heading-line-height;
+@mixin x-flex-between {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+@mixin x-flex-flex-start {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+@mixin x-flex-column-flex-start {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+@mixin x-flex-align {
+  display: flex;
+  align-items: center;
 }
 
 // ================================
@@ -112,7 +123,7 @@
 //        Border
 // ====================
 
-@mixin add-border(
+@mixin x-border(
   $border-position: all,
   $border-size: 1px,
   $border-pattern: solid,
