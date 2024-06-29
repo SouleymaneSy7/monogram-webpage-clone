@@ -1,30 +1,54 @@
-# React + TypeScript + Vite
+# Monogram Webpage Clone
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+The monogram webpage clone is a solution for the [Frontend practice](https://www.frontendpractice.com/projects/monogram) challenge.
 
-Currently, two official plugins are available:
+### [Demo Link](https://monogram-webpage-clone.vercel.app/)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Screenshots
 
-## Expanding the ESLint configuration
+### Mobile
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+![Mobile Screenshot](./preview/mobile.png)
 
-- Configure the top-level `parserOptions` property like this:
+### Tablets
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
+![Tablets Screenshot](./preview/tablets.png)
+
+### Desktop
+
+![Desktop Screenshot](./preview/desktop.png)
+
+## Built with
+
+- Semantic HTML5 markup
+- SASS
+- CSS custom properties
+- Flexbox
+- CSS Grid
+- Mobile-first workflow
+- [Vite Js](https://vitejs.dev/) Javascript Bundler.
+- [PNPM](https://pnpm.io/) Package Manager.
+- [React Js](https://react.dev/) UI Library.
+- [Typescript](https://www.typescriptlang.org/) a strongly typed programming language that builds on top of JavaScript, giving you better tooling for errors.
+
+## How To Use This Repos
+
+To clone and run this application, you'll need [Git](https://git-scm.com) and [PNPM](http://pnpm.io/) installed on your computer. From your command line:
+
+```zsh
+# Clone this repository
+$ git clone https://github.com/SouleymaneSy7/monogram-webpage-clone
+
+# Install dependencies
+$ pnpm install
+
+# start the server
+$ pnpm dev
 ```
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+## Author
+
+- GitHub - [Souleymane Sy](https://github.com/SouleymaneSy7)
+- Frontend Mentor - [@SouleymaneSy7](https://www.frontendmentor.io/profile/SouleymaneSy7)
+- Dev Challenges - [Souleymane Sy](https://devchallenges.io/profile/534cd213-3165-4c16-bdcf-058e1f468da0)
+- Twitter - [@Souleymanesy43](https://twitter.com/Souleymanesy43)
